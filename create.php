@@ -30,12 +30,12 @@ include 'config.php';
         <label>Email:</label>
         <input type="text" name="email" value="<?= $data['email'] ?>" required>
 
-        <label>Preferable Subject:</label>
-        <input type="text" name="preferable_subject" value="<?= $data['preferable_subject'] ?>" required>
+        <label>Image:</label>
+        <input type="file" name="image" accept="image/*">
+        <input type="hidden" name="id" value="<?= $data['id'] ?>">
+        <input type="hidden" name="old_image" value="<?= $data['image'] ?>">
 
-        <label>Passing Year:</label>
-        <input type="text" name="passing_year" value="<?= $data['passing_year'] ?>" required>
-
+        
         <button type="submit" name="submit">Update</button>
     </form>
 </div>
