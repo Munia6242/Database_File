@@ -1,4 +1,12 @@
-<div class="form-container">
+<?php
+include 'config.php';
+
+?>
+ 
+ 
+ 
+ 
+ <div class="form-container">
     <h2>Edit Student Information</h2>
     <form method="POST">
         <label>Name:</label>
@@ -10,17 +18,17 @@
         <label>Mother Name:</label>
         <input type="text" name="mother_name" value="<?= $data['mother_name'] ?>" required>
 
-        <label>Home Address:</label>
-        <input type="text" name="address" value="<?= $data['address'] ?>" required>
+        <label>Age:</label>
+        <input type="text" name="age" value="<?= $data['age'] ?>" required>
 
-        <label>Educational Status:</label>
-        <input type="text" name="educational_status" value="<?= $data['educational_status'] ?>" required>
+        <label>Address:</label>
+        <input type="text" name="address" value="<?= $data['address'] ?>" required>
 
         <label>Phone Number:</label>
         <input type="text" name="phone_number" value="<?= $data['phone_number'] ?>" required>
 
-        <label>University Name:</label>
-        <input type="text" name="university_name" value="<?= $data['university_name'] ?>" required>
+        <label>Email:</label>
+        <input type="text" name="email" value="<?= $data['email'] ?>" required>
 
         <label>Preferable Subject:</label>
         <input type="text" name="preferable_subject" value="<?= $data['preferable_subject'] ?>" required>

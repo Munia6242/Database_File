@@ -1,6 +1,16 @@
 <?php
 
+include 'config.php';
+
+// Fetch data from the database
+
+$query = "SELECT * FROM db_table";
+$result = mysqli_query($connection, $query);
+if (!$result) {
+    die("Query failed: " . mysqli_error($connection));
+}
 ?>
+
 
 <table>
     <thead>
@@ -15,16 +25,16 @@
             <th>Image</th>
         </tr>
         <tbody>
-            <?php while($row = $result->fetch_assoc()): ?>
+            <?php while ($data = mysqli_fetch_assoc($result)) : ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($row['name']); ?></td>
-                    <td><?php echo htmlspecialchars($row['father_name']); ?></td>
-                    <td><?php echo htmlspecialchars($row['mother_name']); ?></td>
-                    <td><?php echo htmlspecialchars($row['age']); ?></td>
-                    <td><?php echo htmlspecialchars($row['address']); ?></td>
-                    <td><?php echo htmlspecialchars($row['phone']); ?></td>
-                    <td><img src="<?php echo htmlspecialchars($row['image']); ?>" alt="Image" style="width: 50px; height: 50px;"></td>
-
+                    <td><?= htmlspecialchars($data['name']) ?></td>
+                    <td><?= htmlspecialchars($data['father_name']) ?></td>
+                    <td><?= htmlspecialchars($data['mother_name']) ?></td>
+                    <td><?= htmlspecialchars($data['age']) ?></td>
+                    <td><?= htmlspecialchars($data['address']) ?></td>
+                    <td><?= htmlspecialchars($data['phone_number']) ?></td>
+                    <td><?= htmlspecialchars($data['email']) ?></td>
+                    <td><img src="<?= htmlspecialchars($data['image']) ?>" alt="Image" width="50"></td>
                 </tr>
             <?php endwhile; ?>
   
